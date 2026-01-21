@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscribe - MORNINGDIGEST</title>
+    <link rel="icon" href="./Citycons_newspaper_icon-icons.com_67933.ico" type="image/svg+xml">
+    <link rel="stylesheet" href="./src/suscribe.css">
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="btn-back">← Return</a>
+        <div class="login-wrapper">
+            <div class="login-header">
+                <h1>Suscribe</h1>
+            </div>
+
+            <form class="login-form" action="#" method="POST">
+                <!-- Campo Email -->
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="your@email.com" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Campo Contraseña -->
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="••••••••" 
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Categorías -->
+                <div class="form-group">
+                    <label class="form-label">Select your categories</label>
+                    <div class="categories-grid">
+                        <div class="category-item">
+                            <input type="checkbox" id="cat1" name="categories" value="Tecnología">
+                            <label for="cat1">Tecnology</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat2" name="categories" value="Deportes">
+                            <label for="cat2">Sports</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat3" name="categories" value="Política">
+                            <label for="cat3">Politics</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat4" name="categories" value="Entretenimiento">
+                            <label for="cat4">Entertainment</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat5" name="categories" value="Salud">
+                            <label for="cat5">Health</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat6" name="categories" value="Economía">
+                            <label for="cat6">Economy</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat7" name="categories" value="Ciencia">
+                            <label for="cat7">Science</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat8" name="categories" value="Viajes">
+                            <label for="cat8">Travel</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat9" name="categories" value="Educación">
+                            <label for="cat9">Education</label>
+                        </div>
+                        <div class="category-item">
+                            <input type="checkbox" id="cat10" name="categories" value="Ambiente">
+                            <label for="cat10">Environment</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botón Submit -->
+                <button type="submit" class="btn-submit">Suscribe</button>
+            </form>
+        </div>
+    </div>
+    <script src="./src/main.js"></script>
+</body>
+</html>
