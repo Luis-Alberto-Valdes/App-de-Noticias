@@ -187,7 +187,7 @@ function enviarDatos () {
   console.log(datos)
 
   // Enviar los datos al backend
-  fetch('http://localhost:3000/noticias', {
+  fetch('https://app-de-noticias-backend.onrender.com/noticias', {
     method,
     headers: {
       'Content-Type': 'application/json'
