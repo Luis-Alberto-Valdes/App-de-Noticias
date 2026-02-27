@@ -169,7 +169,7 @@ function enviarDatos () {
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
   const pageTitle = document.title
-  const isSuscribe = pageTitle.includes('Subscribe')
+  const isSuscribe = pageTitle.includes('subscribe')
   const method = isSuscribe ? 'POST' : 'DELETE'
 
   // Preparar los datos a enviar
@@ -207,8 +207,6 @@ function enviarDatos () {
       }
     })
     .catch(error => {
-      error.message === 'Failed to fetch'
-        ? mostrarMensaje('Server is not available try again later')
-        : mostrarMensaje('Server error try again later')
+      mostrarMensaje(error.message, 'error')
     })
 }
