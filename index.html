@@ -3,51 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Morning Digest — a personalized daily news digest delivered to your inbox. Curated headlines, no noise." />
+    <meta name="author" content="Luis Alberto Valdes" />
     <link rel="stylesheet" href="./src/modern-normalize.css">
     <link rel="stylesheet" href="./src/style.css">
     <link rel="icon" href="./icons/Citycons_newspaper_icon-icons.com_67933.ico" type="image/x-icon">
-    <title>MORNINGDIGEST</title>
+    <title>Morning Digest — Personalized Daily News</title>
+    <meta name="robots" content="index,follow">
   </head>
   <body>
-    <header id="header" class="header-container">
+    <header id="header" class="header-container" role="banner">
       <div class="header_content">
-        <h2 class="header_logo"><img class="header_logo-img" src="./icons/Newspaper_icon-icons.com_51983.svg" alt="Logo"> MORNINGDIGEST</h2>
+        <h2 class="header_logo"><img class="header_logo-img" src="./icons/Citycons_newspaper_icon-icons.com_67933.ico" alt="Morning Digest logo"> Morning Digest</h2>
         <div class="header_btn-container">
-          <a id="suscribeBTN" href="./suscribe.html" class="header_btn-suscribe">Suscribe</a>
-          <a id="unsuscribeBTN" href="./unsuscribe.html" class="header_btn-unsuscribe">Unsuscribe</a>
+          <a id="subscribeBTN" href="./subscribe.html" class="header_btn-subscribe" role="button" aria-label="Subscribe to Morning Digest">Subscribe</a>
+          <a id="unsubscribeBTN" href="./unsubscribe.html" class="header_btn-unsubscribe" role="button" aria-label="Unsubscribe from Morning Digest">Unsubscribe</a>
         </div>
       </div>
     </header>
 
-    <main id="main" class="main-content">
+    <main id="main" class="main-content" role="main">
       <section class="main_info-container">
         <div class="main_info">
           <h1 class="main_info-title">Stay Informed,<br>Every Single<br>Morning</h1>
           <p class="main_info-description">Your personalized daily digest delivered straight to your inbox. No noise, just the news that matters to you.</p>
         </div>
         <div class="main_info-image">
-          <img src="./assets/cofee.png" alt="A coffee and a tablet with the newspaper"></img>
+          <img src="./assets/cofee.png" alt="A coffee and a tablet with the newspaper">
         </div>
       </section>
 
       <section class="main_instructions-container">
-        <h3 class="main_instrucions-title">How It Works</h3>
-        <span class="main_instruction-separation"></span>
+        <h2 class="main_instrucions-title">How It Works</h2>
+        <hr class="main_instruction-separation" aria-hidden="true">
         <ul class="main_instrucions">
           <li class="main_instruction">
-            <img class="main_instruction-icon" src="./icons/personadd_111023.svg" alt="Step 1">
+            <img class="main_instruction-icon" src="./icons/personadd_111023.svg" alt="Step 1: Sign up">
             <p class="main_instruction-description">Step 1</p>
             <h4 class="main_instruction-title">Sign Up</h4>
-            <p class="main_instruction-text">Quick and easy email-only registration. No credit cards, no complex forms</p>
+            <p class="main_instruction-text">Quick and easy email-only registration. No credit cards, no complex forms.</p>
           </li>
           <li class="main_instruction">
-            <img class="main_instruction-icon" src="./icons/category_icon_244306.svg" alt="Step 2">
+            <img class="main_instruction-icon" src="./icons/category_icon_244306.svg" alt="Step 2: Choose categories">
             <p class="main_instruction-description">Step 2</p>
             <h4 class="main_instruction-title">Choose Your Category</h4>
-            <p class="main_instruction-text">Choose a category (or several) for localized headlines and stories that directly impact your daily life</p>
+            <p class="main_instruction-text">Choose a category (or several) for localized headlines and stories that directly impact your daily life.</p>
           </li>
           <li class="main_instruction">
-          <img class="main_instruction-icon" src="./icons/clock-with-white-face_icon-icons.com_72804.svg" alt="Step 3">
+          <img class="main_instruction-icon" src="./icons/clock-with-white-face_icon-icons.com_72804.svg" alt="Step 3: Morning delivery">
             <p class="main_instruction-description">Step 3</p>
             <h4 class="main_instruction-title">Morning Delivery</h4>
             <p class="main_instruction-text">Receive your personalized news digest every morning, delivered directly to your inbox.</p>
@@ -56,15 +59,15 @@
       </section>
 
       <section class="main_cta-container">
-        <h3 class="main_cta-title">Enjoy your morning routine with our personalized news digest</h3>
-        <a href="./suscribe" class="main_cta-button">Get Started Free</a>
+        <h2 class="main_cta-title">Enjoy Your Morning Routine with Our Personalized News Digest</h2>
+        <a href="./subscribe" class="main_cta-button" role="button" aria-label="Get started with Morning Digest">Get Started Free</a>
       </section>
     </main>
 
-    <footer id="footer" class="footer-container">
+    <footer id="footer" class="footer-container" role="contentinfo">
       <div class="footer-content">
-        <h2 class="footer_logo"><img class="footer_logo-img" src="./icons/Newspaper_icon-icons.com_51983.svg" alt="Logo">MORNINGDIGEST</h2>
-        <p class="footer_description">Made by Luis Alberto Valdes<a target="_blank" href="https://github.com/Luis-Alberto-Valdes/"><img class="footer_description-icons" src="./icons/git_plain_logo_icon_146507.svg" alt="Git"></a><a target="_blank" href=""><img class="footer_description-icons" src="./icons/linkedin_logo_icon_170234.svg" alt="Linkedin"></a></p>
+        <h2 class="footer_logo"><img class="footer_logo-img" src="./icons/Citycons_newspaper_icon-icons.com_67933.ico" alt="Morning Digest logo"> Morning Digest</h2>
+        <p class="footer_description">Made by Luis Alberto Valdes. <a target="_blank" rel="noopener noreferrer" href="https://github.com/Luis-Alberto-Valdes/" aria-label="Open Luis Alberto Valdes GitHub in new tab"><img class="footer_description-icons" src="./icons/git_plain_logo_icon_146507.svg" alt="GitHub"></a> <a target="_blank" rel="noopener noreferrer" href="" aria-label="Open LinkedIn profile in new tab"><img class="footer_description-icons" src="./icons/linkedin_logo_icon_170234.svg" alt="LinkedIn"></a></p>
       </div>
     </footer>
 

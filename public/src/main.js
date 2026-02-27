@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function validarFormulario () {
   const email = document.getElementById('email')
   const password = document.getElementById('password')
+  const passwordConfirm = document.getElementById('password-confirm')
   const categoriesGrid = document.querySelector('.categories-grid')
 
   // Validar que los elementos existan
@@ -55,6 +56,17 @@ function validarFormulario () {
     esValido = false
   }
 
+  // Validar confirmación de contraseña si existe el campo
+  if (passwordConfirm) {
+    if (!passwordConfirm.value) {
+      mostrarError(passwordConfirm, 'Please confirm your password')
+      esValido = false
+    } else if (!validarPasswordMatch(password.value, passwordConfirm.value)) {
+      mostrarError(passwordConfirm, 'Passwords do not match')
+      esValido = false
+    }
+  }
+
   // Validar categorías si existen
   if (categoriesGrid) {
     const checkboxes = categoriesGrid.querySelectorAll('input[type="checkbox"]:checked')
@@ -62,12 +74,13 @@ function validarFormulario () {
       mostrarErrorCategoria('You must select at least one category')
       esValido = false
     }
+    if (checkboxes.length > 5) {
+      mostrarErrorCategoria('You can select a maximum of 5 categories')
+      esValido = false
+    }
   }
-
   if (esValido) {
-    const pageTitle = document.title
-    const mensaje = pageTitle.includes('Suscribe') ? 'Subscription successful!' : 'Unsubscribe successful!'
-    mostrarMensaje(mensaje, 'success')
+    enviarDatos()
   }
 
   return esValido
@@ -80,7 +93,11 @@ function validarEmail (email) {
 }
 
 function validarPassword (password) {
-  return password.length >= 6 && password.trim() !== ''
+  return password.length >= 6 && password.length <= 30 && password.trim() !== ''
+}
+
+function validarPasswordMatch (password, passwordConfirm) {
+  return password === passwordConfirm && password.trim() !== ''
 }
 
 function mostrarError (elemento, mensaje) {
@@ -131,7 +148,7 @@ function mostrarMensaje (mensaje, tipo = 'success') {
 
   setTimeout(() => {
     alerta.remove()
-  }, 4000)
+  }, 10000)
 }
 
 // Remover error cuando el usuario hace focus
@@ -147,3 +164,49 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 })
+
+function enviarDatos () {
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+  const pageTitle = document.title
+  const isSuscribe = pageTitle.includes('Suscribe')
+  const method = isSuscribe ? 'POST' : 'DELETE'
+
+  // Preparar los datos a enviar
+  const datos = {
+    email,
+    password
+  }
+
+  // Si es suscribe, agregar las categorías
+  if (isSuscribe) {
+    const categoriesSelected = document.querySelectorAll('.categories-grid input[type="checkbox"]:checked')
+    const categories = Array.from(categoriesSelected).map(checkbox => checkbox.value)
+    datos.categories = categories
+  }
+  console.log(datos)
+
+  // Enviar los datos al backend
+  fetch('http://localhost:3000/noticias', {
+    method,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(datos)
+  })
+    .then(response => {
+      if (response.ok) {
+        const mensaje = isSuscribe ? 'Subscription successful revice your email for verification code!' : 'Unsubscribe successful!'
+        mostrarMensaje(mensaje, 'success')
+        // Limpiar el formulario después del envío exitoso
+        document.querySelector('.login-form').reset()
+      } else {
+        return response.json().then(error => {
+          throw new Error(error.message || 'Server is not available try again later')
+        })
+      }
+    })
+    .catch(error => {
+      mostrarMensaje(error.message, 'error')
+    })
+}
