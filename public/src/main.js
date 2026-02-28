@@ -207,6 +207,7 @@ function enviarDatos () {
       }
     })
     .catch(error => {
+      error.message = 'Server error try again later'
       mostrarMensaje(error.message, 'error')
     })
 }
