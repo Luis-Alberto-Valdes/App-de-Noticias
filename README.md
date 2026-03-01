@@ -22,7 +22,7 @@ Morning Digest is a full-stack news application designed to deliver personalized
   - CSS
   - JavaScript
 
-## Frontend Link
+## Backend Link
 
 [Backend](https://github.com/Luis-Alberto-Valdes/App-de-Noticias-Backend)  
 
