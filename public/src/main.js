@@ -168,8 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function enviarDatos () {
   const email = document.getElementById('email').value
   const password = document.getElementById('password').value
-  const pageTitle = document.title
-  const isSuscribe = pageTitle.includes('subscribe')
+  const pageTitle = document.title.toLowerCase()
+  // Check for subscribe page (matches "subscribe" but NOT "unsubscribe")
+  const isSuscribe = pageTitle.includes('subscribe') && !pageTitle.includes('unsubscribe')
   const method = isSuscribe ? 'POST' : 'DELETE'
 
   // Preparar los datos a enviar
@@ -207,7 +208,6 @@ function enviarDatos () {
       }
     })
     .catch(error => {
-      error.message = 'Server error try again later'
       mostrarMensaje(error.message, 'error')
     })
 }
