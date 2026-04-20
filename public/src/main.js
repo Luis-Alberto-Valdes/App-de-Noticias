@@ -188,7 +188,7 @@ function enviarDatos () {
   console.log(datos)
 
   // Enviar los datos al backend
-  fetch('https://app-de-noticias-backend.onrender.com/noticias', {
+  fetch('https://app-de-noticias-backend.onrender.com/user', {
     method,
     headers: {
       'Content-Type': 'application/json'
