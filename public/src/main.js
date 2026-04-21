@@ -185,7 +185,6 @@ function enviarDatos () {
     const categories = Array.from(categoriesSelected).map(checkbox => checkbox.value)
     datos.categories = categories
   }
-  console.log(datos)
 
   // Enviar los datos al backend
   fetch('https://app-de-noticias-backend.onrender.com/user', {
